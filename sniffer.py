@@ -27,27 +27,5 @@ def do_sniff():
         except UnicodeDecodeError:
             print(f'[💲]:\tPayload Data: {buffer}')
 
-def main(stdscr):
-    stdscr.clear()
-    stdscr.addstr("Keyboard Sniffer (ESC to Exit)")
-    
 
-    while 1:
-        keyc = stdscr.getch()
-        if keyc == 27:
-            stdscr.clear()
-            stdscr.addstr(0,0,"Program Exit")
-            stdscr.refresh()
-        else:
-            stdscr.clear()
-            stdscr.addstr(3,0,f"Key Code: {keyc}\n")
-            if keyc >= 65 and keyc <= 255:
-                stdscr.addstr(4,0,f"Key: {chr(keyc)}")
-            else:
-                stdscr.addstr(4,0,f"Special Key (NON-ASCII)")
-            stdscr.refresh()
-        stdscr.refresh()
-
-
-#wrapper(main)
 do_sniff()
