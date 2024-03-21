@@ -1,11 +1,7 @@
 #Basic Packet Sniffer in Python
-import curses
 from pylibpcap.pcap import sniff
 from pylibpcap import get_iface_list
-from curses import wrapper
 
-ESCAPE = 27
-SPACE = 32
 
 def do_sniff():
     print("[💾] Avaliable Devices")
